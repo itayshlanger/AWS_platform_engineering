@@ -7,7 +7,7 @@ stages {
 		    def stringParam = params.File
 			echo "String parameter: ${stringParam}"
 		    sh "mkdir -p /var/lib/jenkins/workspace/"
-			echo /var/lib/jenkins/workspace/test.txt
+		    sh " echo /var/lib/jenkins/workspace/test.txt"
 		    sh "sudo cp ${stringParam} /var/lib/jenkins/workspace/"
 		    
 
