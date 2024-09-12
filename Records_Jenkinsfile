@@ -9,7 +9,7 @@ stages {
                     def id = params.HostedZoneID
                     def command = "sudo -u ubuntu python3 Itay_project.py -r route53"
                     if (action == 'Create Record') {
-			command += " -a record --create ${id} -- name ${Name} --value ${value} --TTL ${TTL} --Rtype ${Record Type}"
+			command += " -a record --create ${id} --name ${Name} --value ${value} --TTL ${TTL} --Rtype ${Record Type}"
   	            } else if (action == 'Update Record') {
 			command += " -a record --update ${id} --name ${Name} --value ${value} --TTL ${TTL} --Rtype ${Record Type}"
                     } else if (action == 'Delete Record') {
