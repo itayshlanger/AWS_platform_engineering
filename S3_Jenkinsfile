@@ -6,6 +6,7 @@ stages {
                 script {
 		    echo "${File}"
 		    def fileParam = params.File
+		    echo "File parameter is a ${fileParam.getClass().getName()}"
 		    if (fileParam instanceof java.io.File) {
     		        def filePath = fileParam.getAbsolutePath()
     		        echo "File path: ${filePath}"
