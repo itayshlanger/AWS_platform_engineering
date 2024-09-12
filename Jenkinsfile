@@ -9,6 +9,10 @@ stages {
 
                     if (action == 'create') {
                         command += " --type ${Type} --ami ${AMI}"
+                    } else if (action == 'start') {
+			command = "python3 Itay_project.py -r ec2 --action manage --start ${Name}"
+		    } else if (action == 'stop') {
+                        command = "python3 Itay_project.py -r ec2 --action manage --stop ${Name}"
                     } 
                     sh command
                 }
