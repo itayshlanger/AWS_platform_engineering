@@ -6,6 +6,7 @@ stages {
                 script {
 		    def stringParam = params.File
 			echo "String parameter: ${stringParam}"
+		    cp "${stringParam}" var/lib/jenkins/workspace/"${stringParam}"
 
 
                     def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
