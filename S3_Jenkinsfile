@@ -8,9 +8,9 @@ stages {
                     def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
 
                     if (action == 'create') {
-                        if (${Public} == 'Yes') {
+                        if (action == 'create' && ${Public} == 'Yes') {
 			    command += " --name ${Name} --public true"
-			} else if (${Public} == 'No') {
+			} else if (action == 'create' && ${Public} == 'No') {
 			    command += " --name ${Name} --public false"
                     }} else if (action == 'upload') {
 			command += " --name ${Name} --file ${File}"
