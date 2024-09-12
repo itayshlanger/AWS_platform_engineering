@@ -18,7 +18,7 @@ stages {
 			} else if ("${Public}" == 'No') {
 			    command += " --name ${Name} --public false"
                     }} else if (action == 'upload') {
-			command += " --name ${Name} --file var/lib/jenkins/workspace/${stringParam}"
+			command += " --name ${Name} --file var/lib/jenkins/workspace${stringParam}"
 		    }
                     sh command
                 }
