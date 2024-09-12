@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
 
-                    def command = "python3 Itay_project.py --action ${ACTION}"
+                    def command = "python3 Itay_project.py -r ec2 --action ${ACTION}"
 
                     if (action == 'create') {
                         command += " --type ${type} --ami ${AMI}"
