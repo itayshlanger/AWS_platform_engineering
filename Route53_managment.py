@@ -179,6 +179,7 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
                         HostedZoneId=create,
                     )
                     print('succsesfuly created record', name)
+                    break
             else:
                 print('Error: no hosted zone created by this CLI matches this ID')
     elif action == 'list':
