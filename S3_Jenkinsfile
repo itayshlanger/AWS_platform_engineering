@@ -5,8 +5,14 @@ stages {
             steps {
                 script {
 		    echo "${File}"
-		    def stringParam = params.File
-		    echo "String parameter: ${stringParam}"
+		    def fileParam = params.File
+		    if (fileParam instanceof java.io.File) {
+    		        def filePath = fileParam.getAbsolutePath()
+    		        echo "File path: ${filePath}"
+		    } else {
+    		        echo "Not ${filePath}"
+		    }
+
 
                     def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
                     if (action == 'create') {
