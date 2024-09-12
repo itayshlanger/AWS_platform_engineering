@@ -6,12 +6,7 @@ stages {
                 script {
 		    def stringParam = params.File
 			echo "String parameter: ${stringParam}"
-		    sh "mkdir -p /var/lib/jenkins/workspace/"
-		    sh " echo /var/lib/jenkins/workspace/test.txt"
-		    sh "sudo cp ${stringParam} /var/lib/jenkins/workspace/"
 		    
-
-
                     def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
                     if (action == 'create') {
                         if ("${Public}" == 'Yes') {
@@ -19,9 +14,9 @@ stages {
 			} else if ("${Public}" == 'No') {
 			    command += " --name ${Name} --public false"
                     }} else if (action == 'upload') {
-			command += " --name ${Name} --file var/lib/jenkins/workspace${stringParam}"
+			command += " --name ${Name} --file ${stringParam}"
 		    }
-                    sh command
+                    sh" command
                 }
             }
         }
