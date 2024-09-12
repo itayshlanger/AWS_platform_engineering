@@ -10,7 +10,7 @@ stages {
                         if ("${Public}" == 'Yes') {
 			                      command += "-a create --name ${Name} --public true"
 			                  } else if ("${Public}" == 'No') {
-			                      command += "-a create --name ${Name} --public false"
+			                      command += " -a create --name ${Name} --public false"
                         }} else if (action == 'List') {
 			                      command += " -a list"
 		                    }
