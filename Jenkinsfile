@@ -1,19 +1,19 @@
 pipeline {
     agent any
-
-    stages {
+stages {
         stage('Run Python Script') {
             steps {
-                script {
+                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: AWS_CREDENTIALS_ID]]) {
+                    script {
 
-                    def command = "python3 Itay_project.py -r ec2 --action ${ACTION}"
+                        def command = "python3 your_script.py -r ec2 --action ${ACTION}"
 
-                    if (action == 'create') {
-                        command += " --type ${type} --ami ${AMI}"
-                    }
+                        if (action == 'create') {
+                            command += " --type ${Type} --ami ${AMI}"
+                        }
 
-                    // Execute the command
-                    sh command
+                        sh command
+		    }
                 }
             }
         }
