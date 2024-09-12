@@ -5,11 +5,12 @@ stages {
             steps {
                 script {
 		    echo "${File}"
-		    def fileParam = params."${File}"
+		    def fileParam = params.File
 		    if (fileParam instanceof java.io.File) {
     		        def filePath = fileParam.getAbsolutePath()
     		        echo "File path: ${filePath}"
 		    } else {
+			def filePath = fileParam.getAbsolutePath()
     		        echo "Not ${filePath}"
 		    }
 
