@@ -5,7 +5,7 @@ stages {
             steps {
                 script {
 		    def file = params.File
-			echo "String parameter: ${file}"
+		    def Name = params.Name
 		    
                     def command = "sudo -u ubuntu python3 Itay_project.py -r s3 --action ${ACTION}"
                     if (action == 'create') {
