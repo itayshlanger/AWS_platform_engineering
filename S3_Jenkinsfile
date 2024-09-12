@@ -4,7 +4,7 @@ stages {
         stage('Run Python Script') {
             steps {
                 script {
-		    echo ${File}
+		    echo "${File}"
                     def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
 
                     if (action == 'create') {
