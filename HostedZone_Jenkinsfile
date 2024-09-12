@@ -8,7 +8,7 @@ stages {
                     def command = "sudo -u ubuntu python3 Itay_project.py -r route53"
                     if (action == 'Create HostedZone') {
                         if ("${Public}" == 'Yes') {
-			                      command += "-a create --name ${Name} --public true"
+			                      command += " -a create --name ${Name} --public true"
 			                  } else if ("${Public}" == 'No') {
 			                      command += " -a create --name ${Name} --public false"
                         }} else if (action == 'List') {
