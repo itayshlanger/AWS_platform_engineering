@@ -3,9 +3,9 @@ import boto3
 from Route53_managment import handle_route53
 from S3_managment import handle_s3
 from ec2_managment import checking_instances_ids, handle_ec2
-ec2 = boto3.resource('ec2')
-s3 = boto3.client('s3')
-route53 = boto3.client('route53')
+ec2 = boto3.resource('ec2', region_name= 'us-east-1')
+s3 = boto3.client('s3', region_name= 'us-east-1')
+route53 = boto3.client('route53', region_name= 'us-east-1')
 
 
 def main():
