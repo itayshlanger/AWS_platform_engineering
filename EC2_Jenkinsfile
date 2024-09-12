@@ -4,7 +4,7 @@ stages {
         stage('Run Python Script') {
             steps {
                 script {
-
+		    def Name = params.Name
                     def command = "python3 Itay_project.py -r ec2 --action ${ACTION} --name ${Name}"
 
                     if (action == 'create') {
