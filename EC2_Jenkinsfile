@@ -5,7 +5,7 @@ stages {
             steps {
                 script {
 
-                    def command = "python3 Itay_project.py -r ec2 --action ${ACTION}"
+                    def command = "python3 Itay_project.py -r ec2 --action ${ACTION} --name ${Name}"
 
                     if (action == 'create') {
                         command += " --type ${Type} --ami ${AMI}"
