@@ -12,7 +12,7 @@ stages {
 			    command += " --name ${Name} --public true"
 			} else if (pub == 'No') {
 			    command += " --name ${Name} --public false"
-                    } else if (action == 'upload') {
+                    }} else if (action == 'upload') {
 			command += " --name ${Name} --file ${File}"
 		    }
                     sh command
