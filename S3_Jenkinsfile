@@ -1,0 +1,30 @@
+pipeline {
+    agent any
+stages {
+        stage('Run Python Script') {
+            steps {
+                script {
+
+                    def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
+
+                    if (action == 'create') {
+                        if (pub == 'Yes') {
+			    command += " --name ${Name} --public true"
+			} else if (pub == 'No') {
+			    command += " --name ${Name} --public false
+                    } else if (action == 'upload') {
+			command += " --name ${Name} --file ${File}"
+		    }
+                    sh command
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finished.'
+            // Perform any cleanup tasks here if needed
+        }
+    }
+}
