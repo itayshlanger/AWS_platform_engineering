@@ -7,7 +7,7 @@ stages {
 		    def stringParam = params.File
 			echo "String parameter: ${stringParam}"
 		    
-                    def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
+                    def command = "sudo -u ubuntu python3 Itay_project.py -r s3 --action ${ACTION}"
                     if (action == 'create') {
                         if ("${Public}" == 'Yes') {
 			    command += " --name ${Name} --public true"
@@ -16,7 +16,7 @@ stages {
                     }} else if (action == 'upload') {
 			command += " --name ${Name} --file ${stringParam}"
 		    }
-                    sh" command
+                    sh command
                 }
             }
         }
