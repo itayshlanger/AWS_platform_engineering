@@ -4,9 +4,9 @@ stages {
         stage('Run Python Script') {
             steps {
                 script {
-		                def Name = params.Name
+		    def Name = params.Name
                     def value = params.Value
-                    def id = params.HostedZone-ID
+                    def id = params.HostedZoneID
                     def command = "sudo -u ubuntu python3 Itay_project.py -r route53"
                     if (action == 'Create Record') {
 			command += " -a record --create ${id} -- name ${Name} --value ${value} --TTL ${TTL} --Rtype ${Record Type}"
