@@ -114,6 +114,7 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
                                 # Confirm the update
                                 print("Updated record", name, "of type", rtype, "in hosted zone", update)
                                 success = True
+                                break
                             except ClientError as e:
                                 print("Error updating Route 53 record:", e)
                     if not success:
@@ -150,7 +151,7 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
                                 # Confirm the deletion
                                 print("Deleted record", name, "of type", rtype, "in hosted zone", delete)
                                 success = True
-
+                                break
                             except ClientError as e:
                                 print("Error deleting Route 53 record:", e)
                     if not success:
