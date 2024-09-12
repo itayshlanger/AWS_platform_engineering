@@ -7,7 +7,7 @@ stages {
 		    echo "${File}"
                     def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
 		    def dir = "/var/lib/jenkins/workspace/"
-                    dir.eachFile { file ->
+                    dir.each { file ->
                         echo file.getName()
                     }
                     if (action == 'create') {
