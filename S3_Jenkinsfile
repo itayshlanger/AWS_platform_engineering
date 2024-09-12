@@ -6,10 +6,6 @@ stages {
                 script {
 		    echo "${File}"
                     def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
-		    def dir = "/var/lib/jenkins/workspace/"
-                    dir.each { file ->
-                        echo file.getAt()
-                    }
                     if (action == 'create') {
                         if ("${Public}" == 'Yes') {
 			    command += " --name ${Name} --public true"
