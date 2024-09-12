@@ -1,22 +1,11 @@
 pipeline {
     agent any
-parameters {
-        file(name: 'File')
-    }
 stages {
         stage('Run Python Script') {
             steps {
                 script {
-		    echo "${File}"
-		    def fileParam = params.File
-		    echo "File parameter is a ${fileParam.getClass().getName()}"
-		    if (fileParam instanceof java.io.File) {
-    		        def filePath = fileParam.getAbsolutePath()
-    		        echo "File path: ${filePath}"
-		    } else {
-			def filePath = fileParam.getAbsolutePath()
-    		        echo "Not ${filePath}"
-		    }
+		    def stringParam = params.File
+			echo "String parameter: ${stringParam}"
 
 
                     def command = "python3 Itay_project.py -r s3 --action ${ACTION}"
@@ -26,7 +15,7 @@ stages {
 			} else if ("${Public}" == 'No') {
 			    command += " --name ${Name} --public false"
                     }} else if (action == 'upload') {
-			command += " --name ${Name} --file ${File}"
+			command += " --name ${Name} --file var/lib/jenkins/workspace/${stringParam}"
 		    }
                     sh command
                 }
