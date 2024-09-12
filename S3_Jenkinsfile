@@ -11,7 +11,7 @@ stages {
                         if (pub == 'Yes') {
 			    command += " --name ${Name} --public true"
 			} else if (pub == 'No') {
-			    command += " --name ${Name} --public false
+			    command += " --name ${Name} --public false"
                     } else if (action == 'upload') {
 			command += " --name ${Name} --file ${File}"
 		    }
