@@ -1,0 +1,19 @@
+[ INFO] Backup started at [09/15/24 15:35:27]
+[ INFO] Setting hudson in shutdown mode to avoid files corruptions.
+[ INFO] Waiting all jobs end...
+[ INFO] Number of running jobs detected : 0
+[ INFO] All jobs finished.
+[ INFO] Full backup file name : /home/ubuntu/jenkins/jenkins_itay
+[ERROR] org.codehaus.plexus.archiver.ArchiverException: Problem creating zip: /home/ubuntu/jenkins/jenkins_itay (Permission denied) (and the archive is probably corrupt but I could not delete it)
+org.jvnet.hudson.plugins.backup.BackupException: java.io.IOException: org.codehaus.plexus.archiver.ArchiverException: Problem creating zip: /home/ubuntu/jenkins/jenkins_itay (Permission denied) (and the archive is probably corrupt but I could not delete it)
+	at PluginClassLoader for backup//org.jvnet.hudson.plugins.backup.utils.BackupEngine.doBackup(BackupEngine.java:115)
+	at PluginClassLoader for backup//org.jvnet.hudson.plugins.backup.utils.BackupTask.run(BackupTask.java:130)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.io.IOException: org.codehaus.plexus.archiver.ArchiverException: Problem creating zip: /home/ubuntu/jenkins/jenkins_itay (Permission denied) (and the archive is probably corrupt but I could not delete it)
+	at PluginClassLoader for backup//org.jvnet.hudson.plugins.backup.utils.BackupEngine.handleEnd(BackupEngine.java:104)
+	at org.apache.commons.io.DirectoryWalker.walk(DirectoryWalker.java:626)
+	at PluginClassLoader for backup//org.jvnet.hudson.plugins.backup.utils.BackupEngine.doBackup(BackupEngine.java:113)
+	... 2 more
+[ INFO] Cancel hudson shutdown mode
+[ INFO] Backup end at [09/15/24 15:35:45]
+[ INFO] [17.202s]
