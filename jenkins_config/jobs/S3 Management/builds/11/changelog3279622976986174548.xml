@@ -1,0 +1,10 @@
+commit 1c83b81475fed6f7cc16400e3617798286834334
+tree 17018d8a94314ffaaafa139a0d1371acaeae8f09
+parent 472c52f4f539c9a65981ee8f3518a1234eff156c
+author Ubuntu <ubuntu@ip-10-0-1-228.ec2.internal> 2024-09-12 12:51:45 +0000
+committer Ubuntu <ubuntu@ip-10-0-1-228.ec2.internal> 2024-09-12 12:51:45 +0000
+
+    upload S3_Jenkinsfile
+
+
+:100644 100644 0af368cfd5af5b26f2823920d97d3aca5ca5e13b 7ffdd4ebf4adcf7312a8a094b9a57e2c90f697d1 M	S3_Jenkinsfile
