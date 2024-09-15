@@ -1,0 +1,9 @@
+commit f7a88fee485c23125900f25c1f203b73da5c6660
+tree 2f6350d18f340d3f48e149f787b4f7858bc0e3dd
+parent 824a8afeba1e6380bd38221e71d449922ef5b176
+author itayshlanger <itayshlanger16@gmail.com> 2024-09-12 19:31:34 +0300
+committer GitHub <noreply@github.com> 2024-09-12 19:31:34 +0300
+
+    Update HostedZone_Jenkinsfile
+
+:100644 100644 c3d715a1b6833e35265f96617be0d5d88c85ff64 7e949bd02e6cf2bb727150ba3aac94f4e0cfed99 M	HostedZone_Jenkinsfile

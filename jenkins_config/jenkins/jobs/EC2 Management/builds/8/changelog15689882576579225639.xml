@@ -1,0 +1,10 @@
+commit c81b3a84ff5f6320c918127a4e66e011be0283b7
+tree 60cf975f0e0d15b749ef3698370ef6a2b6d93f1c
+parent c20352f9e15b12e7c18e3e00f34f27f55d381e8c
+author Ubuntu <ubuntu@ip-10-0-1-228.ec2.internal> 2024-09-12 10:38:22 +0000
+committer Ubuntu <ubuntu@ip-10-0-1-228.ec2.internal> 2024-09-12 10:38:22 +0000
+
+    Update Jenkinsfile
+
+
+:100644 100644 d0e8c34f0e7dbb023e8a78bc8f045c125a217d76 c59e862a590eadf4c0b3ee13317cd019d758f79e M	Jenkinsfile
