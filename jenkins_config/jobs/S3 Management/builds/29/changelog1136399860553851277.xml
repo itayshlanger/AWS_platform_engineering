@@ -1,9 +1,0 @@
-commit 9fc6489e62e58d849db9e4f0d00b1163fcc41bde
-tree e1bc1e1a4d1c49b7e26b0797eb0b26309708e930
-parent eee63182bfb7abbca81e7a462a667f69f95056a0
-author itayshlanger <itayshlanger16@gmail.com> 2024-09-12 17:33:05 +0300
-committer GitHub <noreply@github.com> 2024-09-12 17:33:05 +0300
-
-    Update S3_Jenkinsfile
-
-:100644 100644 d7014ef311690828a03fd1d960b80ec8b7cd37c8 14ac1b740d1319bf13df00a067c3c42807c9e09c M	S3_Jenkinsfile

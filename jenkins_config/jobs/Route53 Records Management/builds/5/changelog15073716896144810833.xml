@@ -1,9 +1,0 @@
-commit f5daeb45b34fa27c63fce972241990d21110855c
-tree 28c5ee395ebf0463513bd7ed5b005b53e9451d23
-parent 41e96a033a2d75535d9cd83a1bb8fb15a87686a8
-author itayshlanger <itayshlanger16@gmail.com> 2024-09-12 20:10:35 +0300
-committer GitHub <noreply@github.com> 2024-09-12 20:10:35 +0300
-
-    Update Records_Jenkinsfile
-
-:100644 100644 aabec72d30fd062e141f8b50340e366ac83565f5 0de00edba55bc25ad0e9ac5a175e94007e33e9d9 M	Records_Jenkinsfile

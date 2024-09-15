@@ -1,9 +1,0 @@
-commit 9f3fca96809364d6b193f6fdb342c9e3c8f9d19b
-tree 257c90200cfe903a6b1d7fc0d011be43a92666e3
-parent 5c014e150978bb58f5a34b1e8157ead03bd1c586
-author itayshlanger <itayshlanger16@gmail.com> 2024-09-12 20:26:15 +0300
-committer GitHub <noreply@github.com> 2024-09-12 20:26:15 +0300
-
-    Update Route53_managment.py
-
-:100644 100644 74b50fe24b5e339d05cec296dce1b6837c31080d d1ced22975ccae4f736dc320fbaffb0d250f896f M	Route53_managment.py
