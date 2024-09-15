@@ -26,9 +26,9 @@ python3 AWS_platform_engineering/itay_project.py \
 - Access Jenkins at <your-IP>:8080 and download suggested plugins
 - After first set up , go to Manage Jenkins > Plugins > Available plugins
 - Search for ThinBackup and install it
-- Back at your commandline copy jenkins_cofig to your jenkins_home(for example: /var/lib/jenkins)
+- Back at your commandline copy jenkins_conf to your jenkins_home(for example: /var/lib/jenkins)
 ```
-sudo cp -r AWS_platform_engineering.git/jenkins_config/ /path/to/your/jenkins_home
+sudo cp -r AWS_platform_engineering.git/jenkins_conf/ /path/to/your/jenkins_home
 ```
 - Change ownership of the files to jenkins
 ```
