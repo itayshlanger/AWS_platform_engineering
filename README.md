@@ -29,12 +29,12 @@ python3 AWS_platform_engineering/itay_project.py \
 - AMI Choice: Choose between the latest Ubuntu or Amazon Linux AMI.
 - Manage Instances: Start and stop instances created through the CLI.
 - List Instances: List all EC2 instances created via the CLI.
-<br>**S3 Buckets**
+<br><br>**S3 Buckets**
 - Create: Create new S3 buckets with options for public or private access.
 Confirmation for Public Buckets: Confirm public access with an additional approval step.
 - File Upload: Upload files to buckets created through the CLI.
 - List Buckets: List all S3 buckets created via the CLI.
-<br>**Route53 DNS Records**
+<br><br>**Route53 DNS Records**
 - Create Zones: Create DNS zones using Route53.
 - Manage DNS Records: Create, update, or delete DNS records for zones created through the CLI.
 
@@ -71,7 +71,7 @@ sudo systemctl restart jenkins
 ```
 - log in to jenkins and go to Manage Jenkins > ThinBackup > restore (check restore plugins)
 - Restart jenkins again and log in with the Username: User and Password : User (Adminasstrive user)
-<br>**Visual examples:**
+<br><br>**Visual examples:**
 - Use each build to manage a different resource:
 ![image](https://github.com/user-attachments/assets/9292d856-962d-41b8-8abf-c1c42d2f03a0)
 - For each build different set of parameters will be needed:  
