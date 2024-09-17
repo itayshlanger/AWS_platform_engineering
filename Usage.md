@@ -62,17 +62,17 @@
 
 **Creating an EC2 Instance**
 ```
-python cli_tool.py -r ec2 -a create -t t2.nano -i ubuntu
+python itay_project.py -r ec2 -a create -t t2.nano -i ubuntu
 ```
 **Managing an EC2 Instance**
 ```
-python cli_tool.py -r ec2 -a manage --start i-1234567890abcdef
+python itay_project.py -r ec2 -a manage --start i-1234567890abcdef
 ```
 **Uploading a File to an S3 Bucket**
 ```
-python cli_tool.py -r s3 -a upload -f /path/to/file.txt -p true
+python itay_project.py -r s3 -a upload -f /path/to/file.txt -p true
 ```
 **Managing Route 53 Records**
 ```
-python cli_tool.py -r route53 -a record -c Z1234567890 -v example.com -TTL 300 -RT A
+python itay_project.py -r route53 -a record -c Z1234567890 -v example.com -TTL 300 -RT A
 ```
