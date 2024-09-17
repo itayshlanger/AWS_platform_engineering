@@ -87,8 +87,7 @@ python itay_project.py -r route53 -a record -c Z1234567890 -v example.com -TTL 3
     "resource": "ec2",
     "action": "manage",
     "type": "t2.micro",
-    "AMI": "ami-12345",
-    "start": "i-0123456789abcdef0"
+    "AMI": "ubuntu"
   }'
 
 
