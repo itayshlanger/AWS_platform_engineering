@@ -30,6 +30,7 @@ git clone https://github.com/itayshlanger/AWS_platform_engineering.git
 python3 AWS_platform_engineering/itay_project.py \
 --resource <resorce> --action <action>
 ```
+Learn in more detail at [Usage.md](https://github.com/itayshlanger/AWS_platform_engineering/blob/main/Usage.md)
 <br>**In this phase, I developed a Python CLI tool that allows developers to:**
 
 <br>**EC2 Instances**
