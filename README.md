@@ -24,17 +24,22 @@ python3 AWS_platform_engineering/itay_project.py \
 ```
 <br>**In this phase, I developed a Python CLI tool that allows developers to:**
 
-<br>**EC2 Instances**.
+<br>**EC2 Instances**
+
 - Create: Provision new EC2 instances with options for t3.nano or t4g.nano types, and limit to a maximum of two running instances.
 - AMI Choice: Choose between the latest Ubuntu or Amazon Linux AMI.
 - Manage Instances: Start and stop instances created through the CLI.
 - List Instances: List all EC2 instances created via the CLI.
-<br>**S3 Buckets**.
+
+**S3 Buckets**
+  
 - Create: Create new S3 buckets with options for public or private access.
 Confirmation for Public Buckets: Confirm public access with an additional approval step.
 - File Upload: Upload files to buckets created through the CLI.
 - List Buckets: List all S3 buckets created via the CLI.
-<br><br>**Route53 DNS Records**.
+
+**Route53 DNS Records**
+
 - Create Zones: Create DNS zones using Route53.
 - Manage DNS Records: Create, update, or delete DNS records for zones created through the CLI.
 
@@ -71,7 +76,9 @@ sudo systemctl restart jenkins
 ```
 - log in to jenkins and go to Manage Jenkins > ThinBackup > restore (check restore plugins)
 - Restart jenkins again and log in with the Username: User and Password : User (Adminasstrive user)
-<br><br>**Visual examples:**
+
+**Visual examples:**
+
 - Use each build to manage a different resource:
 ![image](https://github.com/user-attachments/assets/9292d856-962d-41b8-8abf-c1c42d2f03a0)
 - For each build different set of parameters will be needed:  
