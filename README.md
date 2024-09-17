@@ -104,8 +104,7 @@ Start the Flask server:
     ```bash
     python app.py
     ```
-
-4. The API will run on `http://127.0.0.1:2310`.
+The API will run on `http://127.0.0.1:2310`.
 
 ## API Endpoints
 
