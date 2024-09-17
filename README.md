@@ -83,7 +83,7 @@ jenkins ALL=(ubuntu) NOPASSWD: /usr/bin/python3
 ```
 sudo systemctl restart jenkins
 ```
-- log in to jenkins and go to Manage Jenkins > ThinBackup > restore (check restore plugins)
+- log in to jenkins and go to Manage Jenkins > ThinBackup > restore latest version(check restore plugins as well)
 - Restart jenkins again and log in with the Username: User and Password : User (Adminasstrive user)
 
 **Visual examples:**
