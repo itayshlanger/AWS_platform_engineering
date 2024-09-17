@@ -105,6 +105,8 @@ def handle_s3(action, public=None, name=None, file=None, resource=None):
 
         except ClientError as e:
             print("Error:", e)
+            return "Error:", e
+        return "Bucket", name, "created successfully."
     elif action == 'upload':
         if name in check_s3_from_cli(resource):
             print('Uploading file to', name, 'bucket ...')
@@ -114,21 +116,28 @@ def handle_s3(action, public=None, name=None, file=None, resource=None):
                 # Upload the file
                 resource.upload_file(file, name, file_name)
                 print('File', file_name, 'uploaded successfully to bucket', name)
+                return 'File', file_name, 'uploaded successfully to bucket', name
 
             except ClientError as e:
                 print("Error uploading file:", e)
+                return "Error uploading file:", e
         elif name in list_all_buckets(resource):
             print('Error: the bucket', name, 'was not created by this CLI and cannot be interacted with.')
+            return 'Error: the bucket', name, 'was not created by this CLI and cannot be interacted with.'
         else:
             print('Error: bucket not found!')
+            return 'Error: bucket not found!'
     elif action == 'list':
         print("Listing S3 buckets...")
         list_of_buckets = check_s3_from_cli(resource)
         if not list_of_buckets:
             print('No buckets were created by this CLI yet.')
+            return 'No buckets were created by this CLI yet.'
         else:
             print('The S3 buckets created from this CLI are:')
             for bucket in list_of_buckets:
                 print(bucket)
+            return list_of_buckets
     else:
         print("Invalid action for S3. Use 'create', 'upload', or 'list'.")
+        return "Invalid action for S3. Use 'create', 'upload', or 'list'."

@@ -64,8 +64,18 @@ def handle_ec2(action, instance_type=None, ami=None, resource=None, instance_id=
             print("Public IP:", instance.public_ip_address)
             print("Instance Type:", instance_type)
             print("Instance AMI:", ami)
+            return ('#############################################'
+                    '\nInstance created successfully !'
+                    "\nInstance Name:", name,
+                    "\nInstance ID:", instance.id,
+                    "\nPublic IP:", instance.public_ip_address,
+                    "\nInstance Type:", instance_type,
+                    "\nInstance AMI:", ami)
         else:
             print('error: too many instance are currently running\n'
+                  'currently running instances:', check_running_instances(resource),
+                  '\nnumber of running instances allowed: 2')
+            return ('error: too many instance are currently running\n'
                   'currently running instances:', check_running_instances(resource),
                   '\nnumber of running instances allowed: 2')
 
@@ -75,23 +85,30 @@ def handle_ec2(action, instance_type=None, ami=None, resource=None, instance_id=
             if instance_id in checking_instances_ids(resource):
                 resource.instances.filter(InstanceIds=[instance_id]).stop()
                 print("stopping EC2 instance...")
+                return "stopping EC2 instance..."
             else:
                 print('Error: this instance was not created by this CLI and cannot be managed.')
+                return 'Error: this instance was not created by this CLI and cannot be managed.'
         elif arg == 'start':
             if check_running_instances(resource) < 2:
                 if instance_id in checking_instances_ids(resource):
                     resource.instances.filter(InstanceIds=[instance_id]).start()
                     print("starting EC2 instance...")
+                    return "starting EC2 instance..."
                 else:
                     print('Error: this instance was not created by this CLI and cannot be managed.')
+                    return 'Error: this instance was not created by this CLI and cannot be managed.'
 
             else:
                 print('error: too many instance are currently running\n'
+                      'currently running instances:', check_running_instances(resource), '(only 2 allowed)')
+                return ('error: too many instance are currently running\n'
                       'currently running instances:', check_running_instances(resource), '(only 2 allowed)')
 
     elif action == 'list':
         print("Listing EC2 instances created by this CLI...")
         num_of_instances = 0
+        dict_of_instance = {}
         for i in resource.instances.all():
             if i.tags:
                 for idx, tag in enumerate(i.tags):
@@ -100,14 +117,19 @@ def handle_ec2(action, instance_type=None, ami=None, resource=None, instance_id=
                             instance = resource.Instance(i.id)
                             if instance.state['Name'] == 'running':
                                 num_of_instances += 1
+                                dict_of_instance[i.id] = 'is running'
                                 print(i.id, 'is running')
                             elif instance.state['Name'] == 'terminated':
                                 num_of_instances += 1
+                                dict_of_instance[i.id] = 'is terminated'
                                 print(i.id, 'is terminated')
                             elif instance.state['Name'] == 'stopped' or 'stopping':
                                 num_of_instances += 1
+                                dict_of_instance[i.id] = 'is stopped'
                                 print(i.id, 'is stopped')
         if num_of_instances <= 0:
             print('No instances created by this CLI yet.')
+            return 'No instances created by this CLI yet.'
     else:
         print("Invalid action for EC2. Use 'create', 'manage', or 'list'.")
+        return "Invalid action for EC2. Use 'create', 'manage', or 'list'."

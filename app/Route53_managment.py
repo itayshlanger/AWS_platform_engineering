@@ -1,6 +1,6 @@
 from botocore.exceptions import ClientError
 import uuid
-
+import boto3
 
 def get_list_of_hostedzones_from_cli(resource):
     hosted_zones = resource.list_hosted_zones()
@@ -42,6 +42,7 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
                 print("Hosted zone for domain", name, "created successfully. \nHosted zone ID:", hosted_zone_id)
             except ClientError as e:
                 print("Error creating hosted zone:", e)
+                return "Error creating hosted zone:", e
         else:
             try:
                 # Create the hosted zone with a unique CallerReference
@@ -61,6 +62,7 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
                 print("Hosted zone for domain", name, "created successfully. \nHosted zone ID:", hosted_zone_id)
             except ClientError as e:
                 print("Error creating hosted zone:", e)
+                return "Error creating hosted zone:", e
 
             # Add a tag to the hosted zone
         try:
@@ -76,6 +78,8 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
             )
         except ClientError as e:
             print("Error adding tag:", e)
+            return "Error adding tag:", e
+        return "Hosted zone for domain", name, "created successfully. \nHosted zone ID:", hosted_zone_id
 
     elif action == 'record':
         hosted_zones = get_list_of_hostedzones_from_cli(resource)
@@ -117,8 +121,12 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
                                 break
                             except ClientError as e:
                                 print("Error updating Route 53 record:", e)
+                                return "Error updating Route 53 record:", e
                     if not success:
                         print('Error: no record with the name', name, 'was found')
+                        return 'Error: no record with the name', name, 'was found'
+                    else:
+                        return "Updated record", name, "of type", rtype, "in hosted zone", update
                 elif delete:
                     # checking if record exist on hosted zone
                     record_list = resource.list_resource_record_sets(HostedZoneId=delete)
@@ -154,8 +162,12 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
                                 break
                             except ClientError as e:
                                 print("Error deleting Route 53 record:", e)
+                                return "Error deleting Route 53 record:", e
                     if not success:
                         print('Error: no record with the name', name, 'was found')
+                        return 'Error: no record with the name', name, 'was found'
+                    else:
+                        return "Deleted record", name, "of type", rtype, "in hosted zone", delete
                 elif create:
                     print('Creating a record for hosted zone :', create, '...')
                     resource.change_resource_record_sets(
@@ -180,21 +192,30 @@ def handle_route53(action, name=None, public=None, resource=None, delete=None, u
                         HostedZoneId=create,
                     )
                     print('succsesfuly created record', name)
-                    break
+                    return 'succsesfuly created record', name
+                else:
+                    return 'Error: for managing record create/delete/update must be provided!'
             else:
                 print('Error: no hosted zone created by this CLI matches this ID')
+                return 'Error: no hosted zone created by this CLI matches this ID'
     elif action == 'list':
         print("Listing Route 53 records...")
+        dict_of_hz = {}
         try:
             tagged_zones = get_list_of_hostedzones_from_cli(resource)
             if tagged_zones:
                 print("Hosted zones created by this CLI:")
                 for tagged_zone in tagged_zones:
                     print(tagged_zone['Name'], "ID:", tagged_zone['Id'].replace("/hostedzone/", ""))
+                    dict_of_hz[(tagged_zone['Name'])] = tagged_zone['Id'].replace("/hostedzone/", "")
+                return dict_of_hz
             else:
                 print("No hosted zones created by this CLI were found.")
+                return "No hosted zones created by this CLI were found."
 
         except ClientError as e:
             print("Error listing hosted zones:", e)
+            return "Error listing hosted zones:", e
     else:
-        print("Invalid action for Route 53. Use 'create', 'manage', or 'list'.")
+        print("Invalid action for Route 53. Use 'create', 'record', or 'list'.")
+
