@@ -85,8 +85,8 @@ python itay_project.py -r route53 -a record -c Z1234567890 -v example.com -TTL 3
   -H "Content-Type: application/json" \
   -d '{
     "resource": "ec2",
-    "action": "manage",
-    "type": "t2.micro",
+    "action": "create",
+    "type": "t2.nano",
     "AMI": "ubuntu"
   }'
 
