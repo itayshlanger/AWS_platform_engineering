@@ -7,7 +7,7 @@ stages {
 		    def file = params.File
 		    def Name = params.Name
 		    
-                    def command = "sudo -u ubuntu python3 Itay_project.py -r s3 --action ${ACTION}"
+                    def command = "sudo -u ubuntu python3 app/Itay_project.py -r s3 --action ${ACTION}"
                     if (action == 'create') {
                         if ("${Public}" == 'Yes') {
 			    command += " --name ${Name} --public true"
