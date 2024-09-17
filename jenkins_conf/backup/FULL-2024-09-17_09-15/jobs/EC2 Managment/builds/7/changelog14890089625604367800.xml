@@ -1,0 +1,18 @@
+commit 2e689e2383c9e722f915f453149fca05e53f18b5
+tree 1c64f354dd952a231bb427897416062d6a2447a1
+parent ec338062e1f292f9f6bc8a248b2f2ee9ce32ae02
+author itayshlanger <itayshlanger16@gmail.com> 2024-09-17 12:11:23 +0300
+committer GitHub <noreply@github.com> 2024-09-17 12:11:23 +0300
+
+    Update EC2_Jenkinsfile
+
+:100644 100644 abc49605694bf10dff54dc78e74f3741299c5069 40785a86ee87319099f4310100c00eee9ac9ec85 M	jenkins/EC2_Jenkinsfile
+commit ec338062e1f292f9f6bc8a248b2f2ee9ce32ae02
+tree c6eecde2d95cf2342ea082d155f848cbb96c741b
+parent 493341fd3c45b6d3165d226e806c3738a13c047f
+author itayshlanger <itayshlanger16@gmail.com> 2024-09-17 12:10:50 +0300
+committer GitHub <noreply@github.com> 2024-09-17 12:10:50 +0300
+
+    Update EC2_Jenkinsfile
+
+:100644 100644 1ac32bccf0da51f961829d6f23a2c336ff8081b6 abc49605694bf10dff54dc78e74f3741299c5069 M	jenkins/EC2_Jenkinsfile

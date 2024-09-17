@@ -1,0 +1,9 @@
+commit 49077dfbc0665afebfc52663fc71cb05de6367f4
+tree c6eecde2d95cf2342ea082d155f848cbb96c741b
+parent 2e689e2383c9e722f915f453149fca05e53f18b5
+author itayshlanger <itayshlanger16@gmail.com> 2024-09-17 12:12:24 +0300
+committer GitHub <noreply@github.com> 2024-09-17 12:12:24 +0300
+
+    Update EC2_Jenkinsfile
+
+:100644 100644 40785a86ee87319099f4310100c00eee9ac9ec85 abc49605694bf10dff54dc78e74f3741299c5069 M	jenkins/EC2_Jenkinsfile
