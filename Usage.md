@@ -1,8 +1,9 @@
 # Usage
 **The CLI tool supports various commands and arguments to manage AWS resources. Below is a description of the available commands and their options.**
 
-# Arguments
+## Arguments
 **Resource Type**
+
 -r, --resource (required): Type of AWS resource to manage. Choices are:
 - ec2 - Manage EC2 instances.
 - s3 - Manage S3 buckets.
@@ -17,7 +18,7 @@
 - upload - Upload a file to an S3 bucket.
 - record - Manage Route 53 records.
 
-# EC2 Arguments
+## EC2 Arguments
 **-t, --type: Type of EC2 instance. Choices are:**
 
 - t2.nano
@@ -32,7 +33,7 @@
 
 **--stop: Instance ID to stop (required for the manage action).**
 
-# S3 Arguments
+## S3 Arguments
 **-p, --public: Specify if public access is needed for the S3 bucket. Choices are:**
 
 - true
@@ -40,7 +41,7 @@
 
 **-f, --file: File path to upload (required for the upload action).**
 
-# Route 53 Arguments
+## Route 53 Arguments
 **-d, --delete: Hosted zone ID to delete a Route 53 record (required for manage action).**
 
 **-u, --update: Hosted zone ID to update a Route 53 record (required for manage action).**
@@ -53,10 +54,10 @@
 
 **-RT, --Rtype: Type of a Route 53 record (required for manage action).**
 
-# General Arguments
+## General Arguments
 **-n, --name: Specify a name (default is "CLI-itay").**
 
-## Examples
+# Examples
 **Here are some examples of how to use the CLI tool:**
 
 **Creating an EC2 Instance**
