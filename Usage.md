@@ -1,7 +1,7 @@
 # Usage
 **The CLI tool supports various commands and arguments to manage AWS resources. Below is a description of the available commands and their options.**
 
-## Arguments
+## CLI Arguments
 **Resource Type**
 
 -r, --resource (required): Type of AWS resource to manage. Choices are:
@@ -76,3 +76,20 @@ python itay_project.py -r s3 -a upload -f /path/to/file.txt -p true
 ```
 python itay_project.py -r route53 -a record -c Z1234567890 -v example.com -TTL 300 -RT A
 ```
+
+# API Usage
+## will accept same arguments as cli
+ **Example Request:**
+  ```bash
+  curl -X POST http://127.0.0.1:2310/project \
+  -H "Content-Type: application/json" \
+  -d '{
+    "resource": "ec2",
+    "action": "manage",
+    "type": "t2.micro",
+    "AMI": "ami-12345",
+    "start": "i-0123456789abcdef0"
+  }'
+
+
+
