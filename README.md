@@ -79,9 +79,9 @@ sudo systemctl restart jenkins
 
 **Visual examples:**
 
-- Use each build to manage a different resource:
+- <u>Use each build to manage a different resource:</u>
 ![image](https://github.com/user-attachments/assets/9292d856-962d-41b8-8abf-c1c42d2f03a0)
-- For each build different set of parameters will be needed:  
-![image](https://github.com/user-attachments/assets/fd977abc-0811-416d-b8cf-6b7bc9ee6d1c)
-![image](https://github.com/user-attachments/assets/7f9aef92-b158-450a-8ac9-85b1b14e0d8b)
+- <u>For each build different set of parameters will be needed:</u>  
+[1)](https://github.com/user-attachments/assets/fd977abc-0811-416d-b8cf-6b7bc9ee6d1c)
+[2)](https://github.com/user-attachments/assets/7f9aef92-b158-450a-8ac9-85b1b14e0d8b)
 
