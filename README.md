@@ -38,7 +38,7 @@ Confirmation for Public Buckets: Confirm public access with an additional approv
 - Create Zones: Create DNS zones using Route53.
 - Manage DNS Records: Create, update, or delete DNS records for zones created through the CLI.
 
-# Step by Step UI
+# Step by Step UI installation
 - Access Jenkins at your-IP:8080 and download suggested plugins
 - After first set up , go to Manage Jenkins > Plugins > Available plugins
 - Search for ThinBackup and install it
