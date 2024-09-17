@@ -11,11 +11,15 @@ sudo apt-get update
 ```
 -  python3 :
 ```
-sudo apt-get python3
+sudo apt-get install python3
 ```
 -  boto3 :
 ```
-sudo apt-get python3-boto3
+sudo apt-get install python3-boto3
+```
+- flask
+```
+sudo apt-get install python3-flask
 ```
 -  AWS CLI : https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 -  Jenkins : https://www.jenkins.io/doc/book/installing/linux/
@@ -94,4 +98,26 @@ sudo systemctl restart jenkins
 
 1)![1)](https://github.com/user-attachments/assets/fd977abc-0811-416d-b8cf-6b7bc9ee6d1c)
 2)![2)](https://github.com/user-attachments/assets/7f9aef92-b158-450a-8ac9-85b1b14e0d8b)
+
+# API
+Start the Flask server:
+    ```bash
+    python app.py
+    ```
+
+4. The API will run on `http://127.0.0.1:2310`.
+
+## API Endpoints
+
+### POST /project
+
+This endpoint handles requests for managing AWS services such as EC2, S3, and Route 53.
+
+**Request Body:**
+
+- `resource` (required): The AWS resource to manage (`ec2`, `s3`, `route53`).
+- `action` (required): The action to perform (`record`, `upload`, `create`, `manage`, `list`).
+- Other parameters depend on the specific AWS resource and action.
+see in more detail at [Usage.md](https://github.com/itayshlanger/AWS_platform_engineering/blob/main/Usage.md)
+
 
