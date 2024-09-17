@@ -6,9 +6,15 @@ This project is a Command-Line Interface (CLI) tool designed to enhance producti
 - Jenkins Pipeline UI: Provides a graphical interface via Jenkins pipelines for easier task management.
 - Platform Engineering: Aimed at increasing productivity and streamlining AWS operations.
 # Prerequisites
-- sudo apt-get update
--  python3 : sudo apt-get python3
--  boto3 : sudo apt-get python3-boto3
+```
+sudo apt-get update
+```
+-  python3 : ```
+sudo apt-get python3
+```
+-  boto3 : ```
+sudo apt-get python3-boto3
+```
 -  AWS CLI : https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 -  Jenkins : https://www.jenkins.io/doc/book/installing/linux/
 # Step By Step CLI installation
