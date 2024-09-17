@@ -1,6 +1,6 @@
 # CLI Tool for AWS Platform Engineering
 # Overview
-This project is a Command-Line Interface (CLI) tool designed to enhance productivity through platform engineering in AWS. Built using Python 3, Boto3, and AWS CLI, it offers an efficient way to interact with AWS services. To provide a more convenient and user-friendly experience, we also utilize Jenkins pipelines as a graphical user interface (UI) for managing and executing tasks.(this tool currently works only on ubuntu0
+This project is a Command-Line Interface (CLI) tool designed to enhance productivity through platform engineering in AWS. Built using Python 3, Boto3, and AWS CLI, it offers an efficient way to interact with AWS services. To provide a more convenient and user-friendly experience, we also utilize Jenkins pipelines as a graphical user interface (UI) for managing and executing tasks.(CLI will work with any OS , UI currently working only on ubuntu)
 # Features
 - AWS Integration: Seamlessly interacts with AWS services using Boto3 and AWS CLI.
 - Jenkins Pipeline UI: Provides a graphical interface via Jenkins pipelines for easier task management.
@@ -11,7 +11,7 @@ This project is a Command-Line Interface (CLI) tool designed to enhance producti
 -  boto3 : sudo apt-get python3-boto3
 -  AWS CLI : https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 -  Jenkins : https://www.jenkins.io/doc/book/installing/linux/
-# Step By Step CLI
+# Step By Step CLI installation
 - configure your AWS Cli
 ```bash
 aws configure
@@ -22,6 +22,22 @@ git clone https://github.com/itayshlanger/AWS_platform_engineering.git
 python3 AWS_platform_engineering/itay_project.py \
 --resource <resorce> --action <action>
 ```
+**In this phase, I developed a Python CLI tool that allows developers to:**
+
+**EC2 Instances**
+- Create: Provision new EC2 instances with options for t3.nano or t4g.nano types, and limit to a maximum of two running instances.
+- AMI Choice: Choose between the latest Ubuntu or Amazon Linux AMI.
+- Manage Instances: Start and stop instances created through the CLI.
+- List Instances: List all EC2 instances created via the CLI.
+**S3 Buckets**
+- Create: Create new S3 buckets with options for public or private access.
+Confirmation for Public Buckets: Confirm public access with an additional approval step.
+- File Upload: Upload files to buckets created through the CLI.
+- List Buckets: List all S3 buckets created via the CLI.
+**Route53 DNS Records**
+- Create Zones: Create DNS zones using Route53.
+- Manage DNS Records: Create, update, or delete DNS records for zones created through the CLI.
+
 # Step by Step UI
 - Access Jenkins at your-IP:8080 and download suggested plugins
 - After first set up , go to Manage Jenkins > Plugins > Available plugins
@@ -55,3 +71,10 @@ sudo systemctl restart jenkins
 ```
 - log in to jenkins and go to Manage Jenkins > ThinBackup > restore (check restore plugins)
 - Restart jenkins again and log in with the Username: User and Password : User (Adminasstrive user)
+**Visual examples:**
+- Use each build to manage a different resource:
+![image](https://github.com/user-attachments/assets/9292d856-962d-41b8-8abf-c1c42d2f03a0)
+- For each build different set of parameters will be needed:  
+![image](https://github.com/user-attachments/assets/fd977abc-0811-416d-b8cf-6b7bc9ee6d1c)
+![image](https://github.com/user-attachments/assets/7f9aef92-b158-450a-8ac9-85b1b14e0d8b)
+
