@@ -9,10 +9,12 @@ This project is a Command-Line Interface (CLI) tool designed to enhance producti
 ```
 sudo apt-get update
 ```
--  python3 : ```
+-  python3 :
+```
 sudo apt-get python3
 ```
--  boto3 : ```
+-  boto3 :
+```
 sudo apt-get python3-boto3
 ```
 -  AWS CLI : https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
